@@ -34,23 +34,30 @@ $("#js-shopping-list-form").submit(function(event){
 
 
     //on click of "check" button
-    $(".shopping-item-toggle").on("click", function(){
+    $(".container").on("click", ".shopping-item-toggle",  function(event){
         //select the span element 
         $(this).closest("div").prev("span").toggleClass("shopping-item__checked");
         //toggle the class "shopping-item__checked"
         //$("span").toggleClass(".shopping-item__checked");
     });
 
+
 //-------------------------------------------
 
 
 // 3. remove from list
     //on click of "delete" button
-   $(".shopping-item-delete").on("click", function(event){
+   $(".container").on("click", ".shopping-item-delete",  function(event){
     //select the element and all related elements to li
     //remove all selected elements
-    $(this).closest("li").remove();
+    this.closest("li").remove();
    });
 }
+
+/*
+$('ul').on('click', 'li', function(event) {
+    this.remove();
+    });
+*/
 
 $(shoppingList);
